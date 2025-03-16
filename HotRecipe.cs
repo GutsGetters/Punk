@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,6 +5,12 @@ using System.Text;
 
 namespace Punk.Hotsy
 {
+    public class HotRecipe<T> : HotRecipe
+    where T : new(), IRecipeMaker
+    {
+        public HotRecipe() : base(new T()) {}
+    } 
+
     public class HotRecipe : IDisposable
     {
         private readonly Dictionary<string, SourcePack> _sourcePacks = new Dictionary<string, SourcePack>();

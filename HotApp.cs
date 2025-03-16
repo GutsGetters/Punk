@@ -1,4 +1,3 @@
-
 using System;
 
 namespace Punk.Hotsy
